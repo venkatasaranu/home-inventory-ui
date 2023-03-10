@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+.bg-dark {
+    background-color: #17a2b8!important;
+}
+img {
+    height: 75px;
+}
+input[type='file'] {
+    opacity:transparent;   
+  }
