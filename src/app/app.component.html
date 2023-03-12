@@ -1,16 +1,16 @@
-
-<div>
+<mat-toolbar color="primary">
+    <span>Angular Material App With Tab and Routing </span>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>  
+</mat-toolbar>
   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-          <span class="navbar-brand" >Sumeer Homes</span>
-          <span><img src="../assets/sumeerhomes.png" /></span>
-      </div>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{link.label}}
+    </a>
     </nav>
-    <!-- <div class="container mt-3">
-        <app-upload-file></app-upload-file>
-    </div> -->
-    <div>
-        <home-inventory-data></home-inventory-data>
-    </div>
-</div>
+    <router-outlet></router-outlet>

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule} from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AppComponent } from './app.component';
@@ -8,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,10 +26,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     MatSlideToggleModule,
     FormsModule,
     MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,

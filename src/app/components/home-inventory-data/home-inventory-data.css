@@ -10,3 +10,7 @@ table {
 td, th {
   width: 5%;
 }
+
+#home-list-section {
+  margin-top: 20px;
+}
