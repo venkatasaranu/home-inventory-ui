@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeInventoryDataComponent } from './components/home-inventory-data/home-inventory-data.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HomeInventoryDataComponent } from './components/home-inventory-data/hom
     MatInputModule,
     MatButtonModule,
     MatInputModule,
+    MatPaginatorModule,
     BrowserAnimationsModule
   ],
   providers: [],
