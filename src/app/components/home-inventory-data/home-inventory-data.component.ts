@@ -1,38 +1,57 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { HomeInventory } from "src/app/interfaces/HomeInventory";
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { HomeInventoryService } from 'src/app/services/home-inventory-service';
 
 @Component({
-    selector: 'home-inventory-data',
-    templateUrl: './home-inventory-data.html',
-    styleUrls: ['./home-inventory-data.css']
-  })
-  export class HomeInventoryDataComponent  implements AfterViewInit,OnInit {
-  homes : HomeInventory[] |  undefined;
-  displayedColumns: string[] = ['ID', 'Sale Manager', 'Community', 'City','County','School ISD','Address','Stories','Baths','Bed','Garages #','Direction','Home Size','Lot Size','MLS ID','Status','Available','HOA Fee'];
-  dataSource: MatTableDataSource<HomeInventory>;
+  selector: 'home-inventory-data',
+  templateUrl: './home-inventory-data.html',
+  styleUrls: ['./home-inventory-data.css']
+})
+export class HomeInventoryDataComponent implements AfterViewInit {
+  homes: HomeInventory[] | undefined;
+  displayedColumns: string[] = ['inventoryId',
+    'saleManager',
+    'community',
+    'city',
+    'county',
+    'schoolISD',
+    'address',
+    'stories',
+    'baths',
+    'rooms',
+    'garageSize',
+    'direction',
+    'houseSize',
+    'lotSize',
+    'listPrice',
+    'mlsListingId',
+    'status',
+    'available',
+    'hoaFee'];
 
-  @ViewChild(MatPaginator) paginator: any;
-  @ViewChild(MatSort) sort: any;
+  dataSource: MatTableDataSource<HomeInventory> | any = MatTableDataSource;
+
+  @ViewChild(MatPaginator) paginator: any = MatPaginator;
+  @ViewChild(MatSort) sort: any = MatSort;
 
   constructor(private homeInventoryService: HomeInventoryService) {
     // Create 100 users
-     
+
+    this.getHomesList();
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.homes);
+
   }
   private getHomesList() {
     this.homeInventoryService.getHomeInventoryList().subscribe(data => {
       this.homes = data;
+      this.dataSource = new MatTableDataSource(this.homes);
     });
   }
-  ngOnInit(): void {
-    this.getHomesList();
-  }
+ 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -45,5 +64,5 @@ import { HomeInventoryService } from 'src/app/services/home-inventory-service';
       this.dataSource.paginator.firstPage();
     }
   }
-    
-  }
+
+}
