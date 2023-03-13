@@ -6,39 +6,27 @@ import { AppComponent } from './app.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 
-import { MatTableModule } from '@angular/material/table';
-import { MatTabsModule } from '@angular/material/tabs';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { HomeInventoryDataComponent } from './components/home-inventory-data/home-inventory-data.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
+
+import { MaterialModule } from './material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateHomeComponent } from './components/create-home/create-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadFileComponent,
+    CreateHomeComponent,
     HomeInventoryDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatSlideToggleModule,
     FormsModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatInputModule,
-    MatPaginatorModule,
+    ReactiveFormsModule,
+    MaterialModule,
     BrowserAnimationsModule
   ],
   providers: [],

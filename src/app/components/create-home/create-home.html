@@ -1,4 +1,139 @@
 
-<div class="create-home-section">
-    <h2>Create Home</h2>
+<div class="container">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Sale Manager" formControlName="saleManager">
+            <mat-error *ngIf="!saleManager.valid && saleManager.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Community" formControlName="community">
+            <mat-error *ngIf="!community.valid && community.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="city" formControlName="city">
+            <mat-error *ngIf="!city.valid && city.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="County" formControlName="county">
+            <mat-error *ngIf="!county.valid && county.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-element">
+            <input matInput placeholder="School ISD" formControlName="schoolISD">
+            <mat-error *ngIf="!schoolISD.valid && schoolISD.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Address" formControlName="address">
+            <mat-error *ngIf="!address.valid && address.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="No Of Stories" formControlName="stories">
+            <mat-error *ngIf="!stories.valid && stories.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="No Of Baths" formControlName="baths">
+            <mat-error *ngIf="!baths.valid && baths.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-element">
+            <input matInput placeholder="No Of Beds" formControlName="rooms">
+            <mat-error *ngIf="!rooms.valid && rooms.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Garage #" formControlName="garageSize">
+            <mat-error *ngIf="!garageSize.valid && garageSize.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Home Direction" formControlName="direction">
+            <mat-error *ngIf="!direction.valid && direction.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Home SQFT" formControlName="houseSize">
+            <mat-error *ngIf="!houseSize.valid && houseSize.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Lot Size" formControlName="lotSize">
+            <mat-error *ngIf="!lotSize.valid && lotSize.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="List Price" formControlName="listPrice">
+            <mat-error *ngIf="!listPrice.valid && listPrice.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="MLS #" formControlName="mlsListingId">
+            <!-- <mat-error *ngIf="!mlsListingId.valid && mlsListingId.touched">
+                {{ titleAlert }}
+            </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Status" formControlName="status">
+            <mat-error *ngIf="!status.valid && status.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="Avalability" formControlName="available">
+            <mat-error *ngIf="!available.valid && available.touched">
+                {{ titleAlert }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+            <input matInput placeholder="HOA Fee" formControlName="hoaFee">
+            <!-- <mat-error *ngIf="!hoaFee.valid && hoaFee.touched">
+                {{ titleAlert }}
+            </mat-error> -->
+        </mat-form-field>
+        
+        <div class="form-element">
+            <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+          </div>
+
+    </form>
 </div>
+
+<ng-template #forminfo>
+    <div class="container">
+        {{ home | json }}
+    </div>
+</ng-template>

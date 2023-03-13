@@ -44,3 +44,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #8A6E2F !important;
 }
+
+.mat-tab-link , .mat-focus-indicator , .mat-tab-label-active {
+  color: #8A6E2F !important;
+}
