@@ -12,13 +12,15 @@ import { HomeInventoryDataComponent } from './components/home-inventory-data/hom
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateHomeComponent } from './components/create-home/create-home.component';
+import { UpdateHomeComponent } from './components/update-home/update-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadFileComponent,
     CreateHomeComponent,
-    HomeInventoryDataComponent
+    HomeInventoryDataComponent,
+    UpdateHomeComponent
   ],
   imports: [
     BrowserModule,

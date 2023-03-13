@@ -1,7 +1,10 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs/internal/Observable";
 import { Address } from "src/app/interfaces/address";
+import { HomeInventory } from "src/app/interfaces/HomeInventory";
+import { HomeInventoryService } from "src/app/services/home-inventory-service";
 
 @Component({
   selector: 'create-home',
@@ -12,9 +15,29 @@ export class CreateHomeComponent {
 
   formGroup: FormGroup | undefined;
   titleAlert: string = 'This field is required';
-  home: any = '';
+  home: HomeInventory = {
+    inventoryId: 0,
+    saleManager: "",
+    community: "",
+    city: "",
+    county: "",
+    schoolISD: "",
+    address: "",
+    stories: 0,
+    baths: 0,
+    rooms: 0,
+    garageSize: 0,
+    direction: "",
+    houseSize: 0,
+    lotSize: "",
+    listPrice: 0,
+    mlsListingId: "",
+    status: "",
+    available: "",
+    hoaFee: 0
+  };
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private homeInventoryService: HomeInventoryService,private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -40,8 +63,7 @@ export class CreateHomeComponent {
        'mlsListingId': [null],
       'status': [null, Validators.required],
       'available': [null, Validators.required],
-       'hoaFee': [null],
-      'validate': ''
+       'hoaFee': [null]  
     });
   }
 
@@ -174,7 +196,20 @@ export class CreateHomeComponent {
   //     this.formGroup.get('password').hasError('requirements') ? 'Password needs to be at least eight characters, one uppercase letter and one number' : '';
   // }
 
-  onSubmit(post) {
-    this.home = post;
+  onSubmit(home :HomeInventory) {
+    this.homeInventoryService.createHome(home).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.redirectToHomes();
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    });;
   }
+
+  redirectToHomes() {
+    this.router.navigate(['/home']);
+  }
+
 }
