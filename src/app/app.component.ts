@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: []
+  styles: ['./app.component.css']
 })
 export class AppComponent {
   title = 'angular';
@@ -22,7 +22,7 @@ export class AppComponent {
             link: './home',
             index: 1
         }, {
-            label: 'Create Home',
+            label: 'Add New Home',
             link: './create',
             index: 2
         }, 

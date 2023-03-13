@@ -9,6 +9,13 @@ example-fill-remaining-space {
 .bg-dark {
     background-color: #17a2b8!important;
 }
+.sumeer-logo {
+width: 5%;
+height: 90%;
+margin-left: 75%;
+background-image: url(./assets/sumeerhomes.png);
+background-size: 100% 100%;
+}
 img {
     height: 75px;
 }
@@ -17,3 +24,23 @@ input[type='file'] {
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-toolbar.mat-primary {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FDB931 0%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top,  #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);;
+    color: #fff;
+    height: 14%;
+}
+.mat-tab-label, .mat-tab-link, .mat-header-cell, .mat-ink-bar {
+  color: #8A6E2F;
+}
+.mat-tab-label, .mat-tab-link  :hover{
+  color: #8A6E2F;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+  color: #8A6E2F !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #8A6E2F !important;
+}

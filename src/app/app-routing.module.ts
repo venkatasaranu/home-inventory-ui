@@ -5,7 +5,7 @@ import { UploadFileComponent } from './components/upload-file/upload-file.compon
 import { HomeInventoryDataComponent } from './components/home-inventory-data/home-inventory-data.component';
 import { CreateHomeComponent } from './components/create-home/create-home.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/file', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'file', component:  UploadFileComponent},
   { path: 'home', component:  HomeInventoryDataComponent},
   { path: 'create', component: CreateHomeComponent},
