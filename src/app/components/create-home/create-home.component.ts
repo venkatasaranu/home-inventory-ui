@@ -18,7 +18,7 @@ export class CreateHomeComponent {
 
   ngOnInit() {
     this.createForm();
-    this.setChangeValidate()
+  //  this.setChangeValidate()
   }
 
   createForm() {
@@ -37,10 +37,10 @@ export class CreateHomeComponent {
       'houseSize': [null, Validators.required],
       'lotSize': [null, Validators.required],
       'listPrice': [null, Validators.required],
-      // 'mlsListingId': [null, Validators.required],
+       'mlsListingId': [null],
       'status': [null, Validators.required],
       'available': [null, Validators.required],
-      // 'hoaFee': [null, Validators.required],
+       'hoaFee': [null],
       'validate': ''
     });
   }
